@@ -39,7 +39,7 @@ There are 3 high level test scenarios - addition, division and decimals (11 test
 
 Once we put them together like above, among the 11 test samples, these are test data that will exercise the 6 unique bussines scenarions. We can grow test data to cover all posible permutations if needed.
 
-### Implimentation
+### Implementation
 
 Providing key-value pairs that represent input (pressing sequence) as key and expected outcome as value allows me to later inject different test data source easily. I also create an extension method that simplifies the intactactions with inputs regardless of the test scenarios in the most consistent way. 
 
