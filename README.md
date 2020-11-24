@@ -23,12 +23,12 @@ Link to calculator - https://duffmanns.github.io/calc-test/calculator/app/index.
 1. .NET CORE (C#)
 2. MSTest Framework
 3. Selenium WebDriver (Chrome WebDriver)
-4. Nuget for .NET Dependencies
+4. Nuget for .NET Dependencies -- pulling chromedriver.exe, Selenium .NET library, etc.
 
 ## Thoughts
 
 ### Test Cases
-There are 3 high level test scenarios - addition, division and decimals (11 test samples, 4 + 5 + 2). However, I'm going break them down into 6 test cases which should better represent bussiness logics we're testing...
+There are 3 high level test scenarios - addition, division and decimals (11 test samples, 4 + 5 + 2). However, I'm going break them down into 6 test cases which should better represent business logics we're testing...
 
 1. Addition - positive numbers
 2. Division - btw 2 positive numbers
@@ -37,11 +37,33 @@ There are 3 high level test scenarios - addition, division and decimals (11 test
 5. Decimals - addition positive numbers
 6. Decimals - division divided by 0
 
-Once we put them together like above, among the 11 test samples, these are test data that will exercise the 6 unique bussines scenarions. We can grow test data to cover all posible permutations if needed.
+Once we put them together like above, among the 11 test samples, these are test data that will exercise the 6 unique business scenarios. We can grow test data to cover all possible permutations if needed.
 
 ### Implementation
 
-Providing key-value pairs that represent input (pressing sequence) as key and expected outcome as value allows me to later inject different test data source easily. I also create an extension method that simplifies the intactactions with inputs regardless of the test scenarios in the most consistent way. 
+Providing key-value pairs that represent input (pressing sequence) as key and expected outcome as value allows me to later inject different test data source easily. I also create an extension method that simplifies the interactions with inputs regardless of the test scenarios in the most consistent way. 
+
+Another important thing is that under the same business test, all test data will get executed and overall test results will be provided at the end.
+
+Here is the logic
+```dotnet
+string results = null;
+
+foreach (var testSample in testSamples)
+{
+    var result = testSample.Key.Calculate(driver);
+    if (result != testSample.Value)
+    {
+        results += $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+    }
+}
+
+// Want this to be null (meaning no failed tests in this test scenario)
+Assert.IsNull(results, results);
+```
+Here is the output if there are test(s) from the test data failing...
+`Assert.IsNull failed. 5+6 is returning 11, expecting 120! 
+3+7 is returning 10, expecting 30! `
 
 ## What More We Can Do
 1. Add Selenium ExplicitWait or FluentWait for better resiliency

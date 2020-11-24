@@ -40,11 +40,21 @@ namespace calculator_ui_tests
                 { new EnterInputsOperations("3+7"), "10" }
             };
 
+            //Assertion
+            string results = null;
+
             foreach (var testSample in testSamples)
             {
                 var result = testSample.Key.Calculate(driver);
-                Assert.AreEqual(result, testSample.Value, message: $"{testSample.Key} is returning {result}, expecting {testSample.Value}!");
+                if (result != testSample.Value)
+                {
+                    results+= $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+                }
             }
+
+            // Want this to be null (meaning no failed tests in this test scenario)
+            Assert.IsNull(results, results);
+
         }
 
         /// <summary>
@@ -65,11 +75,20 @@ namespace calculator_ui_tests
                 { new EnterInputsOperations("100÷2"), "50" }
             };
 
+            //Assertion
+            string results = null;
+
             foreach (var testSample in testSamples)
             {
                 var result = testSample.Key.Calculate(driver);
-                Assert.AreEqual(result, testSample.Value, message: $"{testSample.Key} is returning {result}, expecting {testSample.Value}!");
+                if (result != testSample.Value)
+                {
+                    results += $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+                }
             }
+
+            // Want this to be null (meaning no failed tests in this test scenario)
+            Assert.IsNull(results, results);
         }
 
         /// <summary>
@@ -87,11 +106,20 @@ namespace calculator_ui_tests
                 { new EnterInputsOperations("0÷2"), "0" }
             };
 
+            //Assertion
+            string results = null;
+
             foreach (var testSample in testSamples)
             {
                 var result = testSample.Key.Calculate(driver);
-                Assert.AreEqual(result, testSample.Value, message: $"{testSample.Key} is returning {result}, expecting {testSample.Value}!");
+                if (result != testSample.Value)
+                {
+                    results += $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+                }
             }
+
+            // Want this to be null (meaning no failed tests in this test scenario)
+            Assert.IsNull(results, results);
         }
 
         /// <summary>
@@ -108,11 +136,20 @@ namespace calculator_ui_tests
                 { new EnterInputsOperations("4÷0"), "Error" }
             };
 
+            //Assertion
+            string results = null;
+
             foreach (var testSample in testSamples)
             {
                 var result = testSample.Key.Calculate(driver);
-                Assert.AreEqual(result, testSample.Value, message: $"{testSample.Key} is returning {result}, expecting {testSample.Value}!");
+                if (result != testSample.Value)
+                {
+                    results += $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+                }
             }
+
+            // Want this to be null (meaning no failed tests in this test scenario)
+            Assert.IsNull(results, results);
         }
 
         /// <summary>
@@ -129,11 +166,20 @@ namespace calculator_ui_tests
                 { new EnterInputsOperations("0.5+2.65354"), "3.15354"  }
             };
 
+            // Assertion
+            string results = null;
+
             foreach (var testSample in testSamples)
             {
                 var result = testSample.Key.Calculate(driver);
-                Assert.AreEqual(result, testSample.Value, message: $"{testSample.Key} is returning {result}, expecting {testSample.Value}!");
+                if (result != testSample.Value)
+                {
+                    results += $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+                }
             }
+
+            // Want this to be null (meaning no failed tests in this test scenario)
+            Assert.IsNull(results, results);
         }
 
         /// <summary>
@@ -150,11 +196,20 @@ namespace calculator_ui_tests
                 { new EnterInputsOperations("1.25-.25/0"), "Error"  }
             };
 
+            // Assertion
+            string results = null;
+
             foreach (var testSample in testSamples)
             {
                 var result = testSample.Key.Calculate(driver);
-                Assert.AreEqual(result, testSample.Value, message: $"{testSample.Key} is returning {result}, expecting {testSample.Value}!");
+                if (result != testSample.Value)
+                {
+                    results += $"{testSample.Key} is returning {result}, expecting {testSample.Value}! \n";
+                }
             }
+
+            // Want this to be null (meaning no failed tests in this test scenario)
+            Assert.IsNull(results, results);
         }
 
         [TestCleanup]
