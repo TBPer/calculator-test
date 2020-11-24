@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator-ui-tests", "calculator-ui-tests\calculator-ui-tests.csproj", "{0748F2E4-612A-4862-875B-AB7EF0925A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator-app-helper", "calculator-app-helper\calculator-app-helper.csproj", "{B6857558-CD44-4261-ACFF-50B389334F25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0748F2E4-612A-4862-875B-AB7EF0925A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0748F2E4-612A-4862-875B-AB7EF0925A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0748F2E4-612A-4862-875B-AB7EF0925A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0748F2E4-612A-4862-875B-AB7EF0925A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6857558-CD44-4261-ACFF-50B389334F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6857558-CD44-4261-ACFF-50B389334F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6857558-CD44-4261-ACFF-50B389334F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6857558-CD44-4261-ACFF-50B389334F25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
