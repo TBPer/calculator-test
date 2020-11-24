@@ -23,5 +23,10 @@ namespace calculator_app_helper
             webDriver.Hit('=');
             return webDriver.GetDisplayResult();
         }
+
+        public override string ToString()
+        {
+            return Input;
+        }
     }
 }
