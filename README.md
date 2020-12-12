@@ -61,11 +61,11 @@ foreach (var testSample in testSamples)
 // Want this to be null (meaning no failed tests in this test scenario)
 Assert.IsNull(results, results);
 ```
-Here is the output if there are test(s) from the test data failing...
-`Assert.IsNull failed. 5+6 is returning 11, expecting 120! 
-3+7 is returning 10, expecting 30! `
+Here is the output example if there are test(s) from the test data failing...
+`Assert.IsNull failed. 5+6 is returning 15, expecting 11! 
+3+7 is returning 30, expecting 10! `
 
-## What More We Can Do
+## What More We Can Do To Make This Better
 1. Add Selenium ExplicitWait or FluentWait for better resiliency
 2. Add support for external test data (larger test samples)
 
@@ -73,6 +73,7 @@ Here is the output if there are test(s) from the test data failing...
 Make sure your system have:
    1. Latest Google Chrome installed -- 87.0.4280.67 or above ![chrome-version](img/chrome-version.png)
    2. dotnet CLI via .NET CORE 3.1 SDK installed https://dotnet.microsoft.com/download ![dotnet-cli-download](img/dotnet-cli-download.png)
+**As reported by many, you may need to add an environment variable to selenium driver*
 
 # How to Run the Tests
 After setup all the prerequisites...
